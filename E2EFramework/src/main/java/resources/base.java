@@ -1,4 +1,4 @@
-package Automation;
+package resources;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -16,7 +16,7 @@ public class base {
 	public WebDriver driverInitializer() throws IOException 
 	{
 		Properties prop = new Properties();
-		FileInputStream fis = new FileInputStream("C:\\Users\\Vusal\\git\\repository\\E2EFramework\\src\\main\\java\\Automation\\data.properties");
+		FileInputStream fis = new FileInputStream("C:\\Users\\Vusal\\git\\repository\\E2EFramework\\src\\main\\java\\resources\\data.properties");
 		
 		prop.load(fis);
 		
