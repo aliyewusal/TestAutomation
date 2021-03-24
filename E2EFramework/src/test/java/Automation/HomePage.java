@@ -3,23 +3,27 @@ package Automation;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
 import pageObjects.ForgotPasswordP;
 import pageObjects.LandingPageP;
 import resources.base;
 
 public class HomePage extends base {
 	
-	@Test (dataProvider = "getData")
-	public void basePageNavigation(String email, String password ,String text) throws IOException
+	@BeforeTest
+	public void driverLauncher() throws IOException
 	{
 		driver = driverInitializer();
-		
-		driver.get(prop.getProperty("url"));
-		
 		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS );
+	}
+	
+	@Test (dataProvider = "getData")
+	public void basePageNavigation(String email, String password ,String text)
+	{
+		driver.get(prop.getProperty("url"));
 		
 		//There are two ways to access to the other class:
 		//1) Inheritance 
@@ -41,6 +45,29 @@ public class HomePage extends base {
 		mp.LogIn().click(); //driver.findElement(By.cssSellector())	
 		
 		System.out.println(text);
+		
+	}
+	
+	@Test
+	public void forgotPassword() throws IOException
+	{		
+		driver.get(prop.getProperty("forgotPassUrl"));
+		
+		LandingPageP lp=new LandingPageP(driver);
+		try 
+		{
+		lp.AcceptCookies().click();
+		}
+		catch(Exception e)
+		{
+			System.out.println("There is no Cookies");
+		}
+		
+		ForgotPasswordP fp=new ForgotPasswordP(driver);
+		
+		fp.mobileNumber().sendKeys("+994515376895");
+		fp.search().click();
+		
 	}
 	
 	@DataProvider
@@ -61,31 +88,10 @@ public class HomePage extends base {
 		return data;
 	}
 	
-	
-	
-	@Test
-	public void forgotPassword() throws IOException
+	@AfterTest
+	public void closWindows()
 	{
-		driver = driverInitializer();
-		
-		driver.get(prop.getProperty("forgotPassUrl"));
-		
-		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS );
-		
-		LandingPageP lp=new LandingPageP(driver);
-		try 
-		{
-		lp.AcceptCookies().click();
-		}
-		catch(Exception e)
-		{
-			System.out.println("There is no Cookies");
-		}
-		
-		ForgotPasswordP fp=new ForgotPasswordP(driver);
-		
-		fp.mobileNumber().sendKeys("+994515376895");
-		fp.search().click();
+		driver.close();
 	}
 }	
 

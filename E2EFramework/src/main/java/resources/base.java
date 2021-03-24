@@ -3,7 +3,6 @@ package resources;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -17,11 +16,9 @@ public class base {
 	{
 		prop = new Properties();
 		FileInputStream fis = new FileInputStream("C:\\Users\\Vusal\\git\\repository\\E2EFramework\\src\\main\\java\\resources\\data.properties");
-		
 		prop.load(fis);
 		
 		String browserName = prop.getProperty("browser");
-		
 		
 		if(browserName.equals("Chrome"))
 		{

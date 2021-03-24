@@ -5,6 +5,7 @@
     <classes>
       <class name="Automation.AppTest"/>
       <class name="Automation.HomePage"/>
+      <class name="Automation.validateTitle"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
