@@ -15,7 +15,7 @@ public class validateTitle extends base{
 		public void getTitle() throws IOException
 		{
 			driver = driverInitializer();
-			driver.get("https://www.facebook.com/");
+			driver.get(prop.getProperty("url"));
 			
 			driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS );
 			
