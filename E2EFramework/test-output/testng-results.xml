@@ -1,17 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-03-22T17:23:22 CET" name="Default suite" finished-at="2021-03-22T17:23:28 CET" duration-ms="6302">
+  <suite started-at="2021-03-24T01:13:31 CET" name="Default suite" finished-at="2021-03-24T01:13:49 CET" duration-ms="17918">
     <groups>
     </groups>
-    <test started-at="2021-03-22T17:23:22 CET" name="Default test" finished-at="2021-03-22T17:23:28 CET" duration-ms="6302">
-      <class name="Automation.validateTitle">
-        <test-method signature="getTitle()[pri:0, instance:Automation.validateTitle@2177849e]" started-at="2021-03-22T17:23:22 CET" name="getTitle" finished-at="2021-03-22T17:23:28 CET" duration-ms="6191" status="PASS">
+    <test started-at="2021-03-24T01:13:31 CET" name="Default test" finished-at="2021-03-24T01:13:49 CET" duration-ms="17918">
+      <class name="Automation.HomePage">
+        <test-method signature="basePageNavigation(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:Automation.HomePage@19d481b]" started-at="2021-03-24T01:13:31 CET" name="basePageNavigation" data-provider="getData" finished-at="2021-03-24T01:13:37 CET" duration-ms="5592" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[example@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Valid credentials]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getTitle -->
-      </class> <!-- Automation.validateTitle -->
+        </test-method> <!-- basePageNavigation -->
+        <test-method signature="basePageNavigation(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:Automation.HomePage@19d481b]" started-at="2021-03-24T01:13:37 CET" name="basePageNavigation" data-provider="getData" finished-at="2021-03-24T01:13:42 CET" duration-ms="5096" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[invalidemal@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[654123]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Invalid credentials]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- basePageNavigation -->
+        <test-method signature="forgotPassword()[pri:0, instance:Automation.HomePage@19d481b]" started-at="2021-03-24T01:13:42 CET" name="forgotPassword" finished-at="2021-03-24T01:13:49 CET" duration-ms="7171" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- forgotPassword -->
+      </class> <!-- Automation.HomePage -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -1,7 +1,6 @@
 package Automation;
 
 import java.io.IOException;
-
 import java.util.concurrent.TimeUnit;
 
 import org.testng.annotations.DataProvider;
@@ -17,7 +16,8 @@ public class HomePage extends base {
 	public void basePageNavigation(String email, String password ,String text) throws IOException
 	{
 		driver = driverInitializer();
-		driver.get("https://www.facebook.com/");
+		
+		driver.get(prop.getProperty("url"));
 		
 		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS );
 		
@@ -67,7 +67,8 @@ public class HomePage extends base {
 	public void forgotPassword() throws IOException
 	{
 		driver = driverInitializer();
-		driver.get("https://www.facebook.com/login/identify/?ctx=recover&ars=facebook_login&from_login_screen=0");
+		
+		driver.get(prop.getProperty("forgotPassUrl"));
 		
 		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS );
 		
